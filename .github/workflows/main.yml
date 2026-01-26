@@ -21,10 +21,6 @@ jobs:
                 repo: context.repo.repo,
                 issue_number: issue.number,
                 body: `
-⚠️ **Milestone 未填寫**
 
-請補上此 Issue 的 Milestone，以利專案追蹤與時程管理。
-未設定 Milestone 的 Issue 將不會被納入專案統計。
-`
               });
             }
