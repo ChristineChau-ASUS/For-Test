@@ -1,0 +1,16 @@
+name: Issue Automation
+
+# 觸發條件
+on:
+  issues:
+    types: [opened]  # 當 issue 被建立時觸發
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add "triage" label
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: triage
