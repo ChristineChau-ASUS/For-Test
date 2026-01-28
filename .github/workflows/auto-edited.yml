@@ -1,4 +1,4 @@
-name: Issue Automation
+name: Issue Automation2
 
 # 觸發條件：每次開新 issue 時
 on:
