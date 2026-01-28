@@ -18,7 +18,7 @@ jobs:
           labels: triage
 
       - name: Add comment
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-project-card
         with:
           issue-number: ${{ github.event.issue.number }}
           body: "謝謝你的 issue，我們會盡快處理。"
