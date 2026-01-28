@@ -28,9 +28,4 @@ jobs:
           body: |
             你的Project baord欄位內容不完整,請盡快提供,謝謝你的配合。
 
-      # 3️⃣ 自動 assign
-      - name: Assign issue
-        uses: kentaro-m/assign-issue@v1
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          assignees: ChristineChau-ASUS   # ← 把這裡改成你的 GitHub ID
+
