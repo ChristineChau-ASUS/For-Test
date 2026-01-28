@@ -1,3 +1,30 @@
-- uses: actions/setup-node@v3
-  with:
-    node-version: '20'
+name: Issue Automation
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  manage-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add label
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: triage
+
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: "謝謝你的 issue，我們會盡快處理。"
+
+      - name: Assign issue
+        uses: kentaro-m/assign-issue@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          assignees: your-github-id
