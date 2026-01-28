@@ -1,31 +1,32 @@
 name: Issue Automation
 
-# 觸發條件：每次開新 issue 時
 on:
   issues:
     types: [opened]
 
-# 讓 workflow 有權限對 issue 做操作
 permissions:
   issues: write
 
 jobs:
   manage-issue:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️⃣ 自動加標籤
-      - name: Add "Test" label
+      - name: Add label
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: Test
 
-      # 2️⃣ 自動留言
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{ github.event.issue.number }}
-          body: |
-            你的Project baord欄位內容不完整,請盡快提供,謝謝你的配合。
+          body: "Project board欄位資訊不完整,請盡快處理。"
+
+      - name: Assign issue
+        uses: kentaro-m/assign-issue@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          assignees: ChristineChau-ASUS
+
 
 
