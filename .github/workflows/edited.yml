@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update Verify result when Status is Done
-        uses: peter-evans/update-project-field@v2
+        uses: ChristineChau-ASUS/For-Test@v2
         with:
           # 要更新的欄位
           field-name: 'Verify result'
