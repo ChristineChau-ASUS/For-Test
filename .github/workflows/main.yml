@@ -1,11 +1,9 @@
 name: Issue Automation
 
-# 觸發條件：每次開新 issue 時
 on:
   issues:
     types: [opened]
 
-# 讓 workflow 有權限對 issue 做操作
 permissions:
   issues: write
 
@@ -14,23 +12,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ 自動加標籤
-      - name: Add "Milestone" label
-        uses: actions-ecosystem/action-add-milestone@v1
+      - name: Add label
+        uses: actions-ecosystem/action-add-labels@v1
         with:
-          labels: Demo
+          labels: triage
 
-      # 2️⃣ 自動留言
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{ github.event.issue.number }}
-          body: |
-            SW1 Project board欄位資訊不完整,請協助盡快更新。謝謝!
+          body: "謝謝你的 issue，我們會盡快處理。"
 
-      # 3️⃣ 自動 assign
       - name: Assign issue
         uses: kentaro-m/assign-issue@v1
         with:
           issue-number: ${{ github.event.issue.number }}
-          assignees: ChristineChau-ASUS   # ← 把這裡改成你的 GitHub ID
+          assignees: ChristinChau-ASUS
