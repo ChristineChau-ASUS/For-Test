@@ -1,61 +1,36 @@
-name: Auto Update Verify Result
+name: Issue Automation
 
+# 觸發條件：每次開新 issue 時
 on:
-  workflow_dispatch: # 手動觸發
   issues:
-    types: [edited]  # Issue 被編輯時觸發
+    types: [opened]
+
+# 讓 workflow 有權限對 issue 做操作
+permissions:
+  issues: write
 
 jobs:
-  update-verify:
+  manage-issue:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      # 1️⃣ 自動加標籤
+      - name: Add "Test" label
+        uses: actions-ecosystem/action-add-labels@v1
         with:
-          node-version: '20'
+          labels: Test
 
-      - name: Update Verify result field on Project Board
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          node <<'EOF'
-          const { Octokit } = require("@octokit/rest");
-          const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+      # 2️⃣ 自動留言
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            你的Project baord欄位內容不完整,請盡快提供,謝謝你的配合。
 
-          const issue = process.env.GITHUB_ISSUE_EVENT || process.env.GITHUB_EVENT_PATH;
-          const fs = require('fs');
-          const event = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
-
-          // 取得 Issue 資料
-          const issueNumber = event.issue.number;
-          const repo = event.repository.name;
-          const owner = event.repository.owner.login;
-
-          // 取得 Status 標籤
-          const labels = event.issue.labels.map(l => l.name);
-
-          if (labels.includes('Done')) {
-            (async () => {
-              // 查詢該 issue 對應的 Project Card
-              const cards = await octokit.projects.listCards({
-                column_id: YOUR_COLUMN_ID  // <- 這裡要填你的 Project Board Column ID
-              });
-
-              const card = cards.data.find(c => c.content_url && c.content_url.endsWith(`/issues/${issueNumber}`));
-              if (!card) {
-                console.log('Card not found for this issue');
-                return;
-              }
-
-              // 更新 Project Field
-              await octokit.projects.updateCard({
-                card_id: card.id,
-                note: 'Verify result: Pass'
-              });
-
-              console.log(`Verify result updated for issue #${issueNumber}`);
-            })();
-          } else {
-            console.log('Status not Done, skip');
-          }
-          EOF
+      # 3️⃣ 自動 assign
+      - name: Assign issue
+        uses: kentaro-m/assign-issue@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          assignees: ChristineChau-ASUS   # ← 把這裡改成你的 GitHub ID
