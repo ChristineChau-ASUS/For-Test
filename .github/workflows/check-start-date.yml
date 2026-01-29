@@ -1,0 +1,71 @@
+name: Check Start Date on Project
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  check-start-date:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Start date field
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue
+            const owner = context.repo.owner
+            const repo = context.repo.repo
+
+            // 查 Issue 的 Project 欄位（GraphQL）
+            const query = `
+              query($owner: String!, $repo: String!, $issue: Int!) {
+                repository(owner: $owner, name: $repo) {
+                  issue(number: $issue) {
+                    projectItems(first: 10) {
+                      nodes {
+                        fieldValues(first: 20) {
+                          nodes {
+                            ... on ProjectV2ItemFieldDateValue {
+                              field {
+                                ... on ProjectV2FieldCommon {
+                                  name
+                                }
+                              }
+                              date
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `
+
+            const result = await github.graphql(query, {
+              owner,
+              repo,
+              issue: issue.number,
+            })
+
+            const items = result.repository.issue.projectItems.nodes
+            let hasStartDate = false
+
+            for (const item of items) {
+              for (const field of item.fieldValues.nodes) {
+                if (field.field?.name === "Start date" && field.date) {
+                  hasStartDate = true
+                }
+              }
+            }
+
+            if (!hasStartDate) {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: issue.number,
+                body: "⚠️ 此 Issue 尚未填寫 Project 的 **Start date**，請補上以利專案追蹤，謝謝 🙏"
+              })
+            }
