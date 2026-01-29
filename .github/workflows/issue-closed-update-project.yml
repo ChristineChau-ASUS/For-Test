@@ -6,7 +6,7 @@ on:
 
 permissions:
   issues: read
-  projects: write
+  
 
 jobs:
   update-project:
