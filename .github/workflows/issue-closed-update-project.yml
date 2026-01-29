@@ -6,11 +6,15 @@ on:
 
 permissions:
   issues: read
+  contents: read
+  projects: write 
   
 
 jobs:
-  update-project:
+  update_project:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Update Verify result to Pass
