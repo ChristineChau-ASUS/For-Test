@@ -1,0 +1,47 @@
+name: Auto assign milestone to issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  assign-milestone:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Assign milestone "demo"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue
+
+            // 如果已經有 milestone，就不處理
+            if (issue.milestone) {
+              console.log('Issue already has milestone, skip.')
+              return
+            }
+
+            // 取得 repo 內所有 milestones
+            const { data: milestones } = await github.rest.issues.listMilestones({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open'
+            })
+
+            // 找名稱是 demo 的 milestone
+            const demoMilestone = milestones.find(m => m.title === 'demo')
+
+            if (!demoMilestone) {
+              throw new Error('Milestone "demo" not found')
+            }
+
+            // 指派 milestone 給 issue
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              milestone: demoMilestone.number
+            })
+
+            console.log('Milestone "demo" assigned.')
