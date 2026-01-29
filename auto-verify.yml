@@ -1,0 +1,62 @@
+name: Auto Verify Result
+
+on:
+  issues:
+    types: [closed]
+
+permissions:
+  issues: read
+  contents: read
+  projects: write
+
+jobs:
+  update_project:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Get Project Item ID
+        id: get_item
+        run: |
+          PROJECT_ID="PVT_kwHODU2Pas4BJrpY"
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+
+          ITEM_ID=$(gh api graphql -F projectId=$PROJECT_ID -f query='
+          query($projectId:ID!) {
+            node(id:$projectId) {
+              ... on ProjectV2 {
+                items(first:100) {
+                  nodes {
+                    id
+                    content {
+                      __typename
+                      ... on Issue {
+                        number
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }' --jq ".data.node.items.nodes[] | select(.content.number==${ISSUE_NUMBER}) | .id")
+
+          echo "ITEM_ID=$ITEM_ID" >> $GITHUB_ENV
+          echo "Found ITEM_ID=$ITEM_ID"
+
+      - name: Set Verify result to Pass
+        if: env.ITEM_ID != ''
+        run: |
+          FIELD_ID="PVTSSF_lAHODU2Pas4BJrpYzg8dLOY"
+          OPTION_PASS_ID="f0215876"
+
+          gh api graphql -f query="
+          mutation {
+            updateProjectV2ItemField(input:{
+              itemId:\"${ITEM_ID}\",
+              fieldId:\"${FIELD_ID}\",
+              value:{singleSelectOptionId:\"${OPTION_PASS_ID}\"}
+            }) {
+              projectV2Item { id }
+            }
+          }"
