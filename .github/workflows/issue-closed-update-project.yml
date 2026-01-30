@@ -24,7 +24,6 @@ jobs:
               const passOptionId = "f0215876"
 
               const issueNodeId = context.payload.issue.node_id
-              const issueNumber = context.payload.issue.number
 
               const query = `
                 query($projectId: ID!, $contentId: ID!) {
@@ -71,7 +70,7 @@ jobs:
               })
 
               console.log("Verify result updated to Pass")
-           } catch (err) {
+            } catch (err) {
               console.error("Auto verify failed:", err)
               throw err
             }
