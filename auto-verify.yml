@@ -52,7 +52,7 @@ jobs:
               const result = await github.graphql(query, { projectId, contentId: issueNodeId })
               console.log("project items query result:", JSON.stringify(result))
 
-              const item = result.node?.items?.nodes?.find(n => n.content?.number === issueNumber)
+              const item = result.node?.items?.nodes?.[0]
 
               if (!item) {
                 // 如果 Issue 不在 Project，就跳過（不新增也不失敗）
