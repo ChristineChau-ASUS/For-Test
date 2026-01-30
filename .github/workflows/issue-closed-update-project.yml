@@ -12,6 +12,7 @@ permissions:
 jobs:
   update_project:
     runs-on: ubuntu-latest
+
     steps:
       - name: Update Verify result to Pass (skip if not in project)
         uses: actions/github-script@v7
@@ -19,19 +20,25 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             try {
+              // ===== 基本設定 =====
               const projectId = "PVT_kwHODU2Pas4BJrpY"
               const fieldId = "PVTSSF_lAHODU2Pas4BJrpYzg8dLOY"
               const passOptionId = "f0215876"
 
               const issueNodeId = context.payload.issue.node_id
+              console.log("Issue node id:", issueNodeId)
 
+              // ===== 正確作法：從 Issue 反查 Project Item =====
               const query = `
-                query($projectId: ID!, $contentId: ID!) {
-                  node(id: $projectId) {
-                    ... on ProjectV2 {
-                      items(first: 50, filterBy: { contentId: $contentId }) {
+                query($issueId: ID!) {
+                  node(id: $issueId) {
+                    ... on Issue {
+                      projectItems(first: 20) {
                         nodes {
                           id
+                          project {
+                            id
+                          }
                         }
                       }
                     }
@@ -40,25 +47,33 @@ jobs:
               `
 
               const result = await github.graphql(query, {
-                projectId,
-                contentId: issueNodeId
+                issueId: issueNodeId
               })
 
-              const item = result.node?.items?.nodes?.[0]
+              const items = result.node?.projectItems?.nodes || []
+
+              const item = items.find(
+                n => n.project.id === projectId
+              )
 
               if (!item) {
                 console.log("Issue is not in this project, skip.")
                 return
               }
 
+              console.log("Found project item:", item.id)
+
+              // ===== 更新 Verify result 為 Pass =====
               const updateMutation = `
-                mutation($itemId:ID!, $fieldId:ID!, $optionId:String!) {
-                  updateProjectV2ItemField(input:{
-                    itemId:$itemId
-                    fieldId:$fieldId
-                    value:{ singleSelectOptionId:$optionId }
+                mutation($itemId: ID!, $fieldId: ID!, $optionId: String!) {
+                  updateProjectV2ItemField(input: {
+                    itemId: $itemId
+                    fieldId: $fieldId
+                    value: { singleSelectOptionId: $optionId }
                   }) {
-                    projectV2Item { id }
+                    projectV2Item {
+                      id
+                    }
                   }
                 }
               `
