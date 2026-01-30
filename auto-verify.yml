@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Update Verify result to Pass
+      - name: Update Verify result to Pass (skip if not in project)
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -22,8 +22,7 @@ jobs:
             try {
               const projectId = "PVT_kwHODU2Pas4BJrpY"
               const fieldId = "PVTSSF_lAHODU2Pas4BJrpYzg8dLOY"
-              // 如果你已知 option id 可以保留作 fallback，否則會用動態查出的值
-              const fallbackPassOptionId = "f0215876"
+              const passOptionId = "f0215876" // 若你確定不會變可保留
 
               const issueNodeId = context.payload.issue.node_id
               const issueNumber = context.payload.issue.number
@@ -31,7 +30,7 @@ jobs:
               console.log("issueNumber:", issueNumber)
               console.log("issueNodeId:", issueNodeId)
 
-              // 1. 找 Issue 是否已在 Project（注意這裡要傳 contentId）
+              // 修正：呼叫時要傳入 contentId，否則 filterBy 不會生效
               const query = `
                 query($projectId: ID!, $contentId: ID!) {
                   node(id: $projectId) {
@@ -53,73 +52,15 @@ jobs:
               const result = await github.graphql(query, { projectId, contentId: issueNodeId })
               console.log("project items query result:", JSON.stringify(result))
 
-              let item = result.node?.items?.nodes?.find(n => n.content?.number === issueNumber)
-              console.log("found item:", item)
+              const item = result.node?.items?.nodes?.find(n => n.content?.number === issueNumber)
 
-              // 2. 如果不在 Project → 加進 Project
               if (!item) {
-                const addMutation = `
-                  mutation($projectId:ID!, $contentId:ID!) {
-                    addProjectV2ItemById(input:{
-                      projectId:$projectId
-                      contentId:$contentId
-                    }) {
-                      item { id }
-                    }
-                  }
-                `
-                const addResult = await github.graphql(addMutation, {
-                  projectId,
-                  contentId: issueNodeId
-                })
-                console.log("addResult:", JSON.stringify(addResult))
-                item = addResult.addProjectV2ItemById.item
+                // 如果 Issue 不在 Project，就跳過（不新增也不失敗）
+                console.log("Issue is not in this project, skip.")
+                return
               }
 
-              if (!item || !item.id) {
-                throw new Error("Could not find or create project item for this issue.")
-              }
-
-              // 3. 取得 field 的 options（動態找 Pass option id；避免硬編碼錯誤）
-              const fieldsQuery = `
-                query($projectId: ID!) {
-                  node(id: $projectId) {
-                    ... on ProjectV2 {
-                      fields(first: 50) {
-                        nodes {
-                          ... on ProjectV2SingleSelectField {
-                            id
-                            name
-                            options {
-                              id
-                              name
-                            }
-                          }
-                          ... on ProjectV2Field {
-                            id
-                            name
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              `
-              const fieldsRes = await github.graphql(fieldsQuery, { projectId })
-              console.log("fieldsRes:", JSON.stringify(fieldsRes))
-
-              const fields = fieldsRes.node?.fields?.nodes || []
-              // 以 fieldId 找欄位；如果沒找到可改用 name 去找
-              const targetField = fields.find(f => f.id === fieldId || f.name === "Verify result")
-              const passOption = targetField?.options?.find(o => o.name.toLowerCase() === "pass")?.id || fallbackPassOptionId
-
-              if (!passOption) {
-                throw new Error("Could not determine Pass option id for the field.")
-              }
-
-              console.log("Using optionId:", passOption)
-
-              // 4. 更新 Verify result = Pass
+              // 若有 item，則更新欄位為 Pass
               const updateMutation = `
                 mutation($itemId:ID!, $fieldId:ID!, $optionId:String!) {
                   updateProjectV2ItemField(input:{
@@ -134,7 +75,7 @@ jobs:
               const updateRes = await github.graphql(updateMutation, {
                 itemId: item.id,
                 fieldId,
-                optionId: passOption
+                optionId: passOptionId
               })
               console.log("updateRes:", JSON.stringify(updateRes))
             } catch (err) {
