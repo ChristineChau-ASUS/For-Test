@@ -71,5 +71,7 @@ jobs:
               })
 
               console.log("Verify result updated to Pass")
-            } catch (err) {
-              console.error("Auto verify failed:"
+           } catch (err) {
+              console.error("Auto verify failed:", err)
+              throw err
+            }
