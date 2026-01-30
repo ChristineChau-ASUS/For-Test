@@ -54,11 +54,7 @@ jobs:
 
               const item = result.node?.items?.nodes?.[0]
 
-              if (!item) {
-                // 如果 Issue 不在 Project，就跳過（不新增也不失敗）
-                console.log("Issue is not in this project, skip.")
-                return
-              }
+             
 
               // 若有 item，則更新欄位為 Pass
               const updateMutation = `
