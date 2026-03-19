@@ -42,7 +42,7 @@ So that [achieve a specific goal or value]
 Use bullet points to clearly describe what the system must do.Each item should be specific and verifiable.
 1. The system must provide users with the ability to delete their personal accounts.
 2. Before deletion, the system must display a confirmation dialog, requiring the user to confirm again.
-* **3. ...
+3. ...
 
 ✔️Non-Functional Requirements (非功能性需求) - (If applicable)：
 
@@ -65,8 +65,8 @@ Does this requirement depend on the completion of other requirements, or do othe
 <br>
 
 5. Attachments & Notes (附件與備註)
-✔️Attachments (附件): Attached are the relevant files.
+✔️Attachments (附件)： Attached are the relevant files.
 <!-- [e.g., UI/UX design mockups, flowcharts, original regulatory documents, customer email screenshots, etc.]-->
 
-### ✔️Notes (備註): **
+✔️Notes (備註)：
 <!-- [e.g., Any additional information that needs to be supplemented.]-->
