@@ -64,7 +64,7 @@ Does this requirement depend on the completion of other requirements, or do othe
 <br>
 
 🌟5. Attachments & Notes (附件與備註)
-✔️Attachments (附件)： Attached are the relevant files.
+✔️Attachments (附件)： 
 [e.g., UI/UX design mockups, flowcharts, original regulatory documents, customer email screenshots, etc.]
 
 ✔️Notes (備註)：
