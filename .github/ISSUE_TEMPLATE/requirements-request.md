@@ -13,7 +13,7 @@ assignees: ''
 ✔️ Legal regulations (法規名稱、條文章節)：
 
 ✔️ Certification (認證標準與條款)：
-[e.g., ISO 27001 Annex A.12.3 - Backup]
+ <!-- ISO 27001 Annex A.12.3 - Backup -->
 
 ✔️ Tender (標案名稱、文件頁碼與項目編號)：
 
@@ -65,7 +65,7 @@ Does this requirement depend on the completion of other requirements, or do othe
 
 🌟5. Attachments & Notes (附件與備註)
 ✔️Attachments (附件)： 
-[e.g., UI/UX design mockups, flowcharts, original regulatory documents, customer email screenshots, etc.]
+<!-- E.g. UI/UX design mockups, flowcharts, original regulatory documents, customer email screenshots, etc. -->
 
 ✔️Notes (備註)：
-[e.g., Any additional information that needs to be supplemented.]
+<!-- Any additional information that needs to be supplemented. -->
