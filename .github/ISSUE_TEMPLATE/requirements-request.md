@@ -1,7 +1,7 @@
 ---
 name: Requirements request
 about: For Pegasus team to propose Requirements
-title: "[The person or department]:"
+title: ''
 labels: ''
 assignees: ''
 
@@ -17,13 +17,15 @@ assignees: ''
 
    -  Tender (標案名稱、文件頁碼與項目編號)：
 
-   -   Customers/Users (客戶或回饋來源)：
+   -  Customers/Users (客戶或回饋來源)：
 
-   -  Business Value / Problem to Solve (商業價值／想要解決的問題)：
+   -  Others (其他)：
+
+**<h1>2. Business Value / Problem to Solve (商業價值／想要解決的問題)：
 
 <!-- Why are we doing this? What benefits will it bring (e.g., increasing revenue, reducing costs, ensuring regulatory compliance, improving user satisfaction)? What are the risks if we do not proceed?-->
 
-**<h1>2. Detailed Description (需求詳述)</h1>**
+**<h1>3. Detailed Description (需求詳述)</h1>**
    -  User Story (使用者故事) - (If applicable)：
 <!-- 
 - As a (身為)  [specific role / 某種角色] E.g.  website administrator, user 
@@ -42,12 +44,12 @@ E.g.
    -  Non-Functional Requirements (非功能性需求) - (If applicable)：
 
 
-**<h1>3. Acceptance Criteria (驗收標準)</h1>**
+**<h1>4. Acceptance Criteria (驗收標準)</h1>**
 <!-- 
 Define “Done” using a testable checklist. The requirement is considered complete only when all criteria are met. (用一個可測試的清單，定義「完成」的標準。當所有標準都滿足時，這個需求才算完成。) 
 -->
 
-**<h1>4. Constraints & Dependencies (限制與依賴性)</h1>**
+**<h1>5. Constraints & Dependencies (限制與依賴性)</h1>**
    -  Constraints (技術限制)：
 <!-- 
 Are there any technical constraints? e.g., For example, must specific APIs be used, or is support for legacy browsers required? (是否有任何技術上的限制？例如：必須使用特定的 API、必須支援舊版瀏覽器等。
@@ -59,7 +61,7 @@ Does this requirement depend on the completion of other requirements, or do othe
 -->
 
 
-**<h1>5. Attachments & Notes (附件與備註)</h1>**
+**<h1>6. Attachments & Notes (附件與備註)</h1>**
    -  Attachments (附件)： 
 <!-- 
 E.g. UI/UX design mockups, flowcharts, original regulatory documents, customer email screenshots, etc. 
