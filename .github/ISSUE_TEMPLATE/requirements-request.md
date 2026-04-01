@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-**<h1>1. Source & Business Value (需求來源與價值)</h1>** 
-<!-- 必填項目最少一項-->
+**<h1>1. Source & Business Value (需求來源與價值)</h1>**  *必填一個項目
+
    -  Source Details (來源詳情)：
 
    -  Legal regulations (法規名稱、條文章節)：
