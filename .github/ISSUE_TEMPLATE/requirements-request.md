@@ -2,7 +2,7 @@
 name: Requirements request
 about: For Pegasus team to propose Requirements
 title: ''
-labels: ''
+labels: Tenders
 assignees: ''
 
 ---
