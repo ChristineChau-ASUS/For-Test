@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**<h1>1. Source & Business Value (需求來源與價值)</h1>**  *必填一個項目
+**<h1>1. Source & Business Value (需求來源與價值)</h1>**  *必填, 可多選
 
    -  Source Details (來源詳情)：
 
