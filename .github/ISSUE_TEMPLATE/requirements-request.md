@@ -24,6 +24,7 @@ assignees: ''
 **<h1>2. Business Value / Problem to Solve (商業價值／想要解決的問題)：</h1>**
 
 <!-- Why are we doing this? What benefits will it bring (e.g., increasing revenue, reducing costs, ensuring regulatory compliance, improving user satisfaction)? What are the risks if we do not proceed?-->
+<BR></BR>
 
 **<h1>3. Detailed Description (需求詳述)</h1>**
    -  User Story (使用者故事) - (If applicable)：
@@ -48,6 +49,7 @@ E.g.
 <!-- 
 Define “Done” using a testable checklist. The requirement is considered complete only when all criteria are met. (用一個可測試的清單，定義「完成」的標準。當所有標準都滿足時，這個需求才算完成。) 
 -->
+<BR></BR>
 
 **<h1>5. Constraints & Dependencies (限制與依賴性)</h1>**
    -  Constraints (技術限制)：
