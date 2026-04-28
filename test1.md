@@ -58,5 +58,356 @@ graph LR
     B3 --> C32[1.3.2 Motor Subsystem]
     C32 --> D231[1.3.2.1 Support needed from 3rd Vendor]
 
-    E[2 Software System]
+    A2[2 Software]
+
+    A2 --> B21[2.1 Device Activation & Verification]
+    B21 --> C211[2.1.1 CC]
+
+    C211 --> D2111[2.1.1.1 Secure Boot and Trust Zone support]
+    C211 --> D2112[2.1.1.2 Define all keys required for CC/FC/GB]
+    C211 --> D2113[2.1.1.3 Store secure keys into safe place]
+
+    B21 --> C212[2.1.2 FC]
+    C212 --> D2121[2.1.2.1 Secure Boot support]
+    C212 --> D2122[2.1.2.2 Store secure keys into safe place]
+
+    B21 --> C213[2.1.3 GB]
+    C213 --> D2131[2.1.3.1 Secure Boot and Trust Zone support]
+    C213 --> D2132[2.1.3.2 Store secure keys into safe place]
+
+    B21 --> C214[2.1.4 Device diagnosis - CC]
+    C214 --> D2141[2.1.4.1 Detect and correct hardware component deviations]
+    C214 --> D2142[2.1.4.2 Status ready on LED status]
+
+    B21 --> C215[2.1.5 Device diagnosis - FC]
+    C215 --> D2151[2.1.5.1 Detect and correct hardware component deviations]
+    C215 --> D2152[2.1.5.2 Status ready on LED status]
+
+    B21 --> C216[2.1.6 Device diagnosis - GB]
+    C216 --> D2161[2.1.6.1 Detect and correct hardware -GB]
+    C216 --> D2162[2.1.6.2 Status ready on LED status -GB]
+
+    B21 --> C217[2.1.7 Network Bootstrap]
+    C217 --> D2171[2.1.7.1 Internet Acccess Method]
+    C217 --> D2172[2.1.7.2 Cellphone as the role of WiFi Hotspot and BLE provisioning controller]
+    C217 --> D2173[2.1.7.3 The process of BT BLE/GATT profile information for WiFi Hotspot, and the message format for that]
+
+    B21 --> C218[2.1.8 Secure On Boarding]
+    C218 --> D2181[2.1.8.1 FDO Secure on boarding]
+    C218 --> D2182[2.1.8.2 Register to lighthouse for overlay IP operation]
+
+    B21 --> C219[2.1.9 Call Home Process]
+    C219 --> D2191[2.1.9.1 Call Home Agent Process]
+
+    B21 --> C2110[2.1.10 Firmware Updates Support-FOTA]
+    C2110 --> D21101[2.1.10.1 IoT Server]
+    C2110 --> D21102[2.1.10.2 MP Server]
+
+    A2 --> B22[2.2 Fleet Management]
+    B22 --> C221[2.2.1]
+    B22 --> C222[2.2.2]
+    B22 --> C223[2.2.3]
+    B22 --> C224[2.2.4]
+
+    %% 2.3 Mission Planning
+    A2 --> B23[2.3 Mission Planning]
+    B23 --> C231[2.3.1]
+    B23 --> C232[2.3.2]
+    B23 --> C233[2.3.3]
+    B23 --> C234[2.3.4]
+
+    %% 2.4 Real-time Flight
+    A2 --> B24[2.4 Real-time Flight]
+    B24 --> C241[2.4.1]
+    B24 --> C242[2.4.2]
+    B24 --> C243[2.4.3]
+    B24 --> C244[2.4.4]
+    B24 --> C245[2.4.5]
+
+    %% 2.5 System & Ops
+    A2 --> B25[2.5 System & Ops]
+    B25 --> C251[2.5.1]
+    B25 --> C252[2.5.2]
+    B25 --> C253[2.5.3]
+
+    %% 2.6 Real-time Flight
+    A2 --> B26[2.6 Real-time Flight]
+    B26 --> C261[2.6.1]
+    B26 --> C262[2.6.2]
+    B26 --> C263[2.6.3]
+
+    %% 2.7 Software
+    A2 --> B27[2.7 Software]
+    B27 --> C271[2.7.1]
+    B27 --> C272[2.7.2]
+    B27 --> C273[2.7.3]
+    B27 --> C274[2.7.4]
+    B27 --> C275[2.7.5]
+
+    %% 2.8 Software (深層)
+    A2 --> B28[2.8 Software]
+
+    B28 --> C281[2.8.1]
+    C281 --> D2811[2.8.1.1]
+    C281 --> D2812[2.8.1.2]
+    C281 --> D2813[2.8.1.3]
+
+    B28 --> C282[2.8.2]
+    C282 --> D2821[2.8.2.1]
+    C282 --> D2822[2.8.2.2]
+
+    B28 --> C283[2.8.3]
+    C283 --> D2831[2.8.3.1]
+
+    B28 --> C284[2.8.4]
+    C284 --> D2841[2.8.4.1]
+
+    B28 --> C285[2.8.5]
+    C285 --> D2851[2.8.5.1]
+    C285 --> D2852[2.8.5.2]
+    C285 --> D2853[2.8.5.3]
+    C285 --> D2854[2.8.5.4]
+    C285 --> D2855[2.8.5.5]
+
+    B28 --> C286[2.8.6]
+    C286 --> D2861[2.8.6.1]
+    C286 --> D2862[2.8.6.2]
+    C286 --> D2863[2.8.6.3]
+    C286 --> D2864[2.8.6.4]
+    C286 --> D2865[2.8.6.5]
+    C286 --> D2866[2.8.6.6]
+    A2 --> B21[2.1 Fleet Management]
+    B21 --> C211[2.1.1 Fleet Management]
+
+    C211 --> D2111[2.1.1.1]
+    C211 --> D2112[2.1.1.2]
+    C211 --> D2113[2.1.1.3]
+
+    B21 --> C212[2.1.2 Fleet Management]
+    C212 --> D2121[2.1.2.1]
+    C212 --> D2122[2.1.2.2]
+
+    B21 --> C213[2.1.3 Fleet Management]
+    C213 --> D2131[2.1.3.1]
+    C213 --> D2132[2.1.3.2]
+
+    B21 --> C214[2.1.4 Fleet Management]
+    C214 --> D2141[2.1.4.1]
+    C214 --> D2142[2.1.4.2]
+
+    B21 --> C215[2.1.5 Fleet Management]
+    C215 --> D2151[2.1.5.1]
+    C215 --> D2152[2.1.5.2]
+
+    B21 --> C216[2.1.6 Fleet Management]
+    C216 --> D2161[2.1.6.1]
+    C216 --> D2162[2.1.6.2]
+
+    B21 --> C217[2.1.7 Fleet Management]
+    C217 --> D2171[2.1.7.1]
+    C217 --> D2172[2.1.7.2]
+    C217 --> D2173[2.1.7.3]
+
+    B21 --> C218[2.1.8 Fleet Management]
+    C218 --> D2181[2.1.8.1]
+    C218 --> D2182[2.1.8.2]
+
+    B21 --> C219[2.1.9 Fleet Management]
+    C219 --> D2191[2.1.9.1]
+
+    B21 --> C2110[2.1.10 Fleet Management]
+    C2110 --> D21101[2.1.10.1]
+    C2110 --> D21102[2.1.10.2]
+
+    %% 2.2
+    A2 --> B22[2.2 Fleet Management]
+    B22 --> C221[2.2.1]
+    B22 --> C222[2.2.2]
+    B22 --> C223[2.2.3]
+    B22 --> C224[2.2.4]
+
+    %% 2.3 Mission Planning
+    A2 --> B23[2.3 Mission Planning]
+    B23 --> C231[2.3.1]
+    B23 --> C232[2.3.2]
+    B23 --> C233[2.3.3]
+    B23 --> C234[2.3.4]
+
+    %% 2.4 Real-time Flight
+    A2 --> B24[2.4 Real-time Flight]
+    B24 --> C241[2.4.1]
+    B24 --> C242[2.4.2]
+    B24 --> C243[2.4.3]
+    B24 --> C244[2.4.4]
+    B24 --> C245[2.4.5]
+
+    %% 2.5 System & Ops
+    A2 --> B25[2.5 System & Ops]
+    B25 --> C251[2.5.1]
+    B25 --> C252[2.5.2]
+    B25 --> C253[2.5.3]
+
+    %% 2.6 Real-time Flight
+    A2 --> B26[2.6 Real-time Flight]
+    B26 --> C261[2.6.1]
+    B26 --> C262[2.6.2]
+    B26 --> C263[2.6.3]
+
+    %% 2.7 Software
+    A2 --> B27[2.7 Software]
+    B27 --> C271[2.7.1]
+    B27 --> C272[2.7.2]
+    B27 --> C273[2.7.3]
+    B27 --> C274[2.7.4]
+    B27 --> C275[2.7.5]
+
+    %% 2.8 Software (深層)
+    A2 --> B28[2.8 Software]
+
+    B28 --> C281[2.8.1]
+    C281 --> D2811[2.8.1.1]
+    C281 --> D2812[2.8.1.2]
+    C281 --> D2813[2.8.1.3]
+
+    B28 --> C282[2.8.2]
+    C282 --> D2821[2.8.2.1]
+    C282 --> D2822[2.8.2.2]
+
+    B28 --> C283[2.8.3]
+    C283 --> D2831[2.8.3.1]
+
+    B28 --> C284[2.8.4]
+    C284 --> D2841[2.8.4.1]
+
+    B28 --> C285[2.8.5]
+    C285 --> D2851[2.8.5.1]
+    C285 --> D2852[2.8.5.2]
+    C285 --> D2853[2.8.5.3]
+    C285 --> D2854[2.8.5.4]
+    C285 --> D2855[2.8.5.5]
+
+    B28 --> C286[2.8.6]
+    C286 --> D2861[2.8.6.1]
+    C286 --> D2862[2.8.6.2]
+    C286 --> D2863[2.8.6.3]
+    C286 --> D2864[2.8.6.4]
+    C286 --> D2865[2.8.6.5]
+    C286 --> D2866[2.8.6.6]
+    A2 --> B21[2.1 Fleet Management]
+    B21 --> C211[2.1.1 Fleet Management]
+
+    C211 --> D2111[2.1.1.1]
+    C211 --> D2112[2.1.1.2]
+    C211 --> D2113[2.1.1.3]
+
+    B21 --> C212[2.1.2 Fleet Management]
+    C212 --> D2121[2.1.2.1]
+    C212 --> D2122[2.1.2.2]
+
+    B21 --> C213[2.1.3 Fleet Management]
+    C213 --> D2131[2.1.3.1]
+    C213 --> D2132[2.1.3.2]
+
+    B21 --> C214[2.1.4 Fleet Management]
+    C214 --> D2141[2.1.4.1]
+    C214 --> D2142[2.1.4.2]
+
+    B21 --> C215[2.1.5 Fleet Management]
+    C215 --> D2151[2.1.5.1]
+    C215 --> D2152[2.1.5.2]
+
+    B21 --> C216[2.1.6 Fleet Management]
+    C216 --> D2161[2.1.6.1]
+    C216 --> D2162[2.1.6.2]
+
+    B21 --> C217[2.1.7 Fleet Management]
+    C217 --> D2171[2.1.7.1]
+    C217 --> D2172[2.1.7.2]
+    C217 --> D2173[2.1.7.3]
+
+    B21 --> C218[2.1.8 Fleet Management]
+    C218 --> D2181[2.1.8.1]
+    C218 --> D2182[2.1.8.2]
+
+    B21 --> C219[2.1.9 Fleet Management]
+    C219 --> D2191[2.1.9.1]
+
+    B21 --> C2110[2.1.10 Fleet Management]
+    C2110 --> D21101[2.1.10.1]
+    C2110 --> D21102[2.1.10.2]
+
+    %% 2.2
+    A2 --> B22[2.2 Fleet Management]
+    B22 --> C221[2.2.1]
+    B22 --> C222[2.2.2]
+    B22 --> C223[2.2.3]
+    B22 --> C224[2.2.4]
+
+    %% 2.3 Mission Planning
+    A2 --> B23[2.3 Mission Planning]
+    B23 --> C231[2.3.1]
+    B23 --> C232[2.3.2]
+    B23 --> C233[2.3.3]
+    B23 --> C234[2.3.4]
+
+    %% 2.4 Real-time Flight
+    A2 --> B24[2.4 Real-time Flight]
+    B24 --> C241[2.4.1]
+    B24 --> C242[2.4.2]
+    B24 --> C243[2.4.3]
+    B24 --> C244[2.4.4]
+    B24 --> C245[2.4.5]
+
+    %% 2.5 System & Ops
+    A2 --> B25[2.5 System & Ops]
+    B25 --> C251[2.5.1]
+    B25 --> C252[2.5.2]
+    B25 --> C253[2.5.3]
+
+    %% 2.6 Real-time Flight
+    A2 --> B26[2.6 Real-time Flight]
+    B26 --> C261[2.6.1]
+    B26 --> C262[2.6.2]
+    B26 --> C263[2.6.3]
+
+    %% 2.7 Software
+    A2 --> B27[2.7 Software]
+    B27 --> C271[2.7.1]
+    B27 --> C272[2.7.2]
+    B27 --> C273[2.7.3]
+    B27 --> C274[2.7.4]
+    B27 --> C275[2.7.5]
+
+    %% 2.8 Software (深層)
+    A2 --> B28[2.8 Software]
+
+    B28 --> C281[2.8.1]
+    C281 --> D2811[2.8.1.1]
+    C281 --> D2812[2.8.1.2]
+    C281 --> D2813[2.8.1.3]
+
+    B28 --> C282[2.8.2]
+    C282 --> D2821[2.8.2.1]
+    C282 --> D2822[2.8.2.2]
+
+    B28 --> C283[2.8.3]
+    C283 --> D2831[2.8.3.1]
+
+    B28 --> C284[2.8.4]
+    C284 --> D2841[2.8.4.1]
+
+    B28 --> C285[2.8.5]
+    C285 --> D2851[2.8.5.1]
+    C285 --> D2852[2.8.5.2]
+    C285 --> D2853[2.8.5.3]
+    C285 --> D2854[2.8.5.4]
+    C285 --> D2855[2.8.5.5]
+
+    B28 --> C286[2.8.6]
+    C286 --> D2861[2.8.6.1]
+    C286 --> D2862[2.8.6.2]
+    C286 --> D2863[2.8.6.3]
+    C286 --> D2864[2.8.6.4]
+    C286 --> D2865[2.8.6.5]
+    C286 --> D2866[2.8.6.6]
 ```
