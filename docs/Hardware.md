@@ -1,3 +1,7 @@
+# The Interactive of Hardware requirement
+
+Author / Maintainer: ChristineChau-ASUS &nbsp; | &nbsp; Last Updated: 2026/05/04
+
 <details>
 <summary><b> 1 Hardware System</b></summary>
 
