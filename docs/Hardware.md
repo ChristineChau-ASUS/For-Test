@@ -6,19 +6,38 @@ Author / Maintainer: ChristineChau-ASUS &nbsp; | &nbsp; Last Updated: 2026/05/04
 <summary><b> 1 Hardware System</b></summary>
 
 <details>
-<summary> 1.1 Drone</summary>
+<summary>▶ 1.1 Drone</summary>
 
-- [1.1.1 Drone - CC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/23)
-- [1.1.2 Drone - FC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/35)
-- [1.1.3 Drone - ESC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/41)
-- [1.1.4 Drone - Spot Light](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/42)
-- [1.1.5 Drone - Loud Speaker](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/43)
-- [1.1.6 Drone - Night Sense](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/44)
+  - [1.1.1 Drone - CC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/23)
+   
+    - [1.1.1.1	Drone - CC - CPU/DDR/UFS](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/24)
+    - [1.1.1.2	Drone - CC - Power/Charger](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/25)
+    - [1.1.1.3	Drone - CC - Battery](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/26)
+    - [1.1.1.4	Drone - CC - Long Range](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/27)
+    - [1.1.1.5	Drone - CC - GPS](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/28)
+    - [1.1.1.6	Drone - CC - TPM](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/29)
+    - [1.1.1.7	Drone - CC - Navi Camera](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/30)
+    - [1.1.1.8	Drone - CC - VIO Camera](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/31)
+    - [1.1.1.9	Drone - CC - WiFi](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/32)
+    - [1.1.1.10	Drone - CC - BT](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/33)
+    - [1.1.1.11	Drone - CC - 5GModem](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/34)
+
+  - [1.1.2 Drone - FC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/35)
+    - [1.1.2.1	Drone - FC - MCU/Flash/RAM](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/36)
+    - [1.1.2.2	Drone - FC - SiK/ELRS](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/37)
+    - [1.1.2.3	Drone - FC - GPS](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/38)
+    - [1.1.2.4	Drone - FC - SE050](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/39)
+    - [1.1.2.5	Drone - FC - IOMCU](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/40)
+
+  - [1.1.3 Drone - ESC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/41)
+  - [1.1.4 Drone - Spot Light](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/42)
+  - [1.1.5 Drone - Loud Speaker](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/43)
+  - [1.1.6 Drone - Night Sense](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/44)
 
 </details>
 
 <details>
-<summary> 1.2 RC</summary>
+<summary>▶ 1.2 RC</summary>
 
 - [1.2.1 RC - CPU/DDR/UFS](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/46)
 - [1.2.2 RC - Power/Charger](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/47)
@@ -37,8 +56,20 @@ Author / Maintainer: ChristineChau-ASUS &nbsp; | &nbsp; Last Updated: 2026/05/04
 </details>
 
 <details>
-<summary> 1.3 RC</summary>
+<summary>▶ 1.3 RC</summary>
 
 - [1.3.1 Gimbal - Camera Subsystem](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/59)
-- [1.3.2 Gimbal - Motor Subsystem](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/68) 
+    - [1.3.1.1	Gimbal - CPU/DDR/UFS](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/60)
+    - [1.3.1.2	Gimbal - Power/Charger](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/61)
+    - [1.3.1.3	Gimbal - Battery](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/62)
+    - [1.3.1.4	Gimbal - Ethernet](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/63)
+    - [1.3.1.5	Gimbal - USB](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/64)
+    - [1.3.1.6	Gimbal - Normal Camera](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/65)
+    - [1.3.1.7	Gimbal - Tele Camera](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/66)
+    - [1.3.1.8	Gimbal - Wide Camera](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/67)
+
+- [1.3.2 Gimbal - Motor Subsystem](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/68)
+    - [1.3.2.1	Support needed from 3rd Vendor](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/69)
+
+
 </details>
