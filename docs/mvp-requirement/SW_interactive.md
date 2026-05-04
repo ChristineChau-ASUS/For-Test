@@ -8,27 +8,27 @@ Author / Maintainer: ChristineChau-ASUS &nbsp; | &nbsp; Last Updated: 2026/05/04
 <details>
 <summary>▶ 2.1 Device Activation & Verification</summary>
 
-  - [2.1.1 Device Activation Requirement - CC]
+  - [2.1.1 Device Activation Requirement - CC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/72)
    
-    - [2.1.1.1 Secure Boot and Trust Zone support]
-    - [2.1.1.2 Define all keys required for CC/FC/GB]
-    - [2.1.1.3 Store secure keys into safe place]
+    - [2.1.1.1 Secure Boot and Trust Zone support](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/73)
+    - [2.1.1.2 Define all keys required for CC/FC/GB](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/74)
+    - [2.1.1.3 Store secure keys into safe place](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/75)
 
-  - [2.1.2 Device Activation Requirement  - FC]
-    - [2.1.2.1 Secure Boot support]
-    - [2.1.2.2 Store secure keys into safe place]
+  - [2.1.2 Device Activation Requirement  - FC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/76)
+    - [2.1.2.1 Secure Boot support](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/77)
+    - [2.1.2.2 Store secure keys into safe place](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/78)
 
-  - [2.1.3 Device Activation Requirement  - GB]
-    - [2.1.3.1 Secure Boot and Trust Zone support]
-    - [2.1.3.2 Store secure keys into safe place]
+  - [2.1.3 Device Activation Requirement  - GB](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/79)
+    - [2.1.3.1 Secure Boot and Trust Zone support](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/80)
+    - [2.1.3.2 Store secure keys into safe place](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/81)
 
-  - [2.1.4 Device diagnosis - CC]
-     - [2.1.4.1	Detect and correct hardware component deviations]
-     - [2.1.4.2	Status ready on LED status]
+  - [2.1.4 Device diagnosis - CC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/82)
+     - [2.1.4.1	Detect and correct hardware component deviations](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/83)
+     - [2.1.4.2	Status ready on LED status](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/84)
 
-  - [2.1.5 Device diagnosis - FC]
-     - [2.1.5.1	Detect and correct hardware component deviations]
-     - [2.1.5.2	Status ready on LED status]
+  - [2.1.5 Device diagnosis - FC](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/85)
+     - [2.1.5.1	Detect and correct hardware component deviations](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/86)
+     - [2.1.5.2	Status ready on LED status](https://github.com/Asus-Robotics-and-AI-Center/requirements/issues/87)
 
   - [2.1.6 Device diagnosis - FC]
      - [2.1.6.1	Detect and correct hardware -GB]
