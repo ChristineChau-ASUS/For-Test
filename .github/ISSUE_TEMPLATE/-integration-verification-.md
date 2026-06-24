@@ -1,7 +1,7 @@
 ---
-name: "[Integration Test]"
+name: "[Integration Verification]"
 about: Please describe what needs to be verified for this development item /請描述開發項目的驗證內容
-title: "[Integration Test] [Feature]"
+title: "[Integration Verification] [Feature]"
 labels: ''
 assignees: ''
 
