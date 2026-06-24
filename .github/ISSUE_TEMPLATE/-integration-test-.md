@@ -1,7 +1,7 @@
 ---
-name: "[Integration Test][Feature] "
+name: "[Integration Test]"
 about: 請仔細描述開發項目的驗證內容...
-title: ''
+title: "[Integration Test] [Feature]"
 labels: ''
 assignees: ''
 
