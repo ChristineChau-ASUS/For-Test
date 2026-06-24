@@ -1,6 +1,6 @@
 ---
 name: "[Integration Test]"
-about: 請仔細描述開發項目的驗證內容...
+about: Please describe what needs to be verified for this development item /請描述開發項目的驗證內容
 title: "[Integration Test] [Feature]"
 labels: ''
 assignees: ''
@@ -8,8 +8,8 @@ assignees: ''
 ---
 
 **1. Description / 開發項目詳述**
-請說明本次整合驗證的功能範圍與預期結果。
-Example: Video streaming 可正確顯示即時影像畫面。
+Please describe the functional scope and expected outcomes of this integration validation. /請說明本次整合驗證的功能範圍與預期結果。
+Example: The video stream displays correctly in real time. / Video streaming 可正確顯示即時影像畫面。
 
 **2. Precondition / 事前需要具備的條件**
 請列出測試前必須完成的條件：
@@ -23,7 +23,7 @@ Example: Video streaming 可正確顯示即時影像畫面。
 
 **3. Test Environment / 測試環境**
 - [ ] TDI
-- [ ] Real Device Test
+- [ ] Real Device Test / 實際整機
 - [ ] Drone
 - [ ] RC
 - [ ] Others: ___
