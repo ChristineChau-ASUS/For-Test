@@ -28,19 +28,23 @@ Example: The video stream displays correctly in real time. / Video streaming 可
 - [ ] RC
 - [ ] Others: ___
 
-**4. Test Items / 驗證項目**
-- [ ] CI/CD
-- [ ] Unit Test
-- [ ] Real Device Test
-
-**5. Dependency / 相依關係**
+**4. Dependency / 相依關係 (前一棒功能)**
+<!-- The more clearly the task is described, the more efficiently the validation can be carried out with the right information. / 描述越清楚,得到的資訊能讓驗證進行更順利  -->
 *Dependency issue:
 *Required PR:
 *PIC:
+*Others: 
 
-**6. Definition of Done / 完成的定義**
+**5. Definition of Done / 完成的定義**
 Please confirm the requirements for this task to be considered complete. / 請確認完成此任務需滿足的條件。
 - [ ] All code changes are merged into the main branch. / 所有程式碼變更都已合併到 main 分支。*
 - [ ] Peer code review has been completed and approved. / 同儕程式碼審查已完成並獲得批准。*
 - [ ] Developer documentation has been updated. / 開發者文件已更新。
 - [ ] User documentation has been updated. / 使用者文件已更新。
+
+**6. Test Items / 已完成的驗證項目**
+- [ ] CI/CD
+- [ ] Unit Test
+- [ ] Real Device Test
+- [ ] Other:___
+<!-- Please review the validation requirements for each item and provide any additional validation items that need to be added. / 依照各項目驗證需求,請Leader們提供需增加的驗證項目  -->
