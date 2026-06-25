@@ -1,0 +1,19 @@
+@TL_or_PO @NextOwner  
+This item is ready for review and handoff confirmation. Please help review the following:
+
+### Review Checklist
+**TL / PO reviewer**
+- [ ] Scope / verification flow is clear
+- [ ] Dependency / risk is identified
+- [ ] Current stage output is acceptable
+- [ ] This issue can move to the next handoff stage
+
+**Next owner**
+- [ ] Required preconditions / environment / version are provided
+- [ ] Current output is sufficient for next-stage development or verification
+- [ ] No missing handoff information
+- [ ] Confirm whether this item is ready for me to take over
+
+Please reply with:
+- `TL/PO Review: Approved / Need update`
+- `Next Owner Review: Approved / Need update`
