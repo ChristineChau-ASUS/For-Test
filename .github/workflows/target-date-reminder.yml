@@ -1,49 +1,16 @@
-name: Review Handoff Comment
+name: Target Date Reminder
 
 on:
-  issues:
-    types: [labeled]
-
-permissions:
-  issues: write
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
 
 jobs:
-  comment:
-    if: github.event.label.name == 'ready-for-review'
+  check-target-date:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Add review handoff comment
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const issue_number = context.issue.number;
-
-            const body = `@TL_or_PO @NextOwner
-
-This item is ready for review and handoff confirmation. Please help review the following:
-
-### Review Checklist
-
-**TL / PO reviewer**
-- [ ] Scope / verification flow is clear
-- [ ] Dependency / risk is identified
-- [ ] Current stage output is acceptable
-- [ ] This issue can move to the next handoff stage
-
-**Next owner**
-- [ ] Required preconditions / environment / version are provided
-- [ ] Current output is sufficient for next-stage development or verification
-- [ ] No missing handoff information
-- [ ] Confirm whether this item is ready for me to take over
-
-Please reply with:
-- \`TL/PO Review: Approved / Need update\`
-- \`Next Owner Review: Approved / Need update\``;
-
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number,
-              body
-            });
+      - name: Check target date rule
+        run: |
+          echo "Target date reminder workflow is running."
+          echo "Rule: Target Date < today and Status != Done"
